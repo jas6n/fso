@@ -1,12 +1,5 @@
-browser -> server
-POST https://studies.cs.helsinki.fi/exampleapp/new_note
-server activated
-server -> browser
-302 found
-server deactivated
-
-browser -> server -- this request is made because 302 found causes a redirect
-GET https://studies.cs.helsinki.fi/exampleapp/notes
+browser -> server 
+GET https://studies.cs.helsinki.fi/exampleapp/spa
 server activated
 server -> browser
 html document
@@ -20,12 +13,12 @@ main.css file
 server deactivated
 
 browser -> server
-GET https://studies.cs.helsinki.fi/exampleapp/main.js
+GET https://studies.cs.helsinki.fi/exampleapp/spa.js
 server activated
 server -> browser
-main.js file
+spa.js file
 server deactivated
--- the browser starts activating the JS code in the main.js file
+-- the browser starts activating the JS code in the spa.js file
 
 browser -> server
 GET https://studies.cs.helsinki.fi/exampleapp/data.json

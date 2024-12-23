@@ -1,0 +1,7 @@
+browser -> server
+POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server activated
+server -> browser
+201 created
+server deactivated
+-- browser handles submission with its loaded javascript file
