@@ -1,0 +1,36 @@
+browser --> server
+POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server activated
+server --> browser
+302 found
+server deactivated
+
+browser --> server // this request is made because 302 found causes a redirect
+GET https://studies.cs.helsinki.fi/exampleapp/notes
+server activated
+server --> browser
+html document
+server deactivated
+
+browser --> server
+GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server activated
+server --> browser
+main.css file
+server deactivated
+
+browser --> server
+GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server activated
+server --> browser
+main.css file
+server deactivated
+// the browser starts activating the JS code in the main.js file
+
+browser --> server
+GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server activated
+server --> browser
+server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ...
+server deactivated
+// the browser executes the callback function that renders the notes 
