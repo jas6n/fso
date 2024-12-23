@@ -23,7 +23,7 @@ browser -> server
 GET https://studies.cs.helsinki.fi/exampleapp/main.js
 server activated
 server -> browser
-main.css file
+main.js file
 server deactivated
 -- the browser starts activating the JS code in the main.js file
 
