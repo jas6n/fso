@@ -18,7 +18,7 @@ server activated
 server -> browser
 spa.js file
 server deactivated
--- the browser starts activating the JS code in the main.js file
+-- the browser starts activating the JS code in the spa.js file
 
 browser -> server
 GET https://studies.cs.helsinki.fi/exampleapp/data.json
