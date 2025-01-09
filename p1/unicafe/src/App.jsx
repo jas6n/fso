@@ -10,21 +10,40 @@ const Statistics = (props) => {
   } 
   return (
     <div>
-      <StatisticsLine text="good" value={props.good} />
-      <StatisticsLine text="neutral" value={props.neutral} />
-      <StatisticsLine text="bad" value={props.bad} />
-      <StatisticsLine text="all" value={props.good + props.neutral + props.bad} />
-      <StatisticsLine text="average" value={(props.good - props.bad) / (props.good + props.neutral + props.bad)} />
-      <StatisticsLine text="percentage" value={(props.good / (props.good + props.neutral + props.bad)) * 100} />
+      <table>
+        <tbody>
+        <StatisticsLine text="good" value={props.good} />
+        <StatisticsLine text="neutral" value={props.neutral} />
+        <StatisticsLine text="bad" value={props.bad} />
+        <StatisticsLine text="all" value={props.good + props.neutral + props.bad} />
+        <StatisticsLine text="average" value={(props.good - props.bad) / (props.good + props.neutral + props.bad)} />
+        <StatisticsLine text="percentage" value={(props.good / (props.good + props.neutral + props.bad)) * 100} />
+
+        </tbody>
+      </table>
+
+        
+
     </div>
   )
 }
 
 const StatisticsLine = (props) => {
+  if (props.text == "percentage"){
+    return (
+      <tr>
+      <td>{props.text}</td>
+      <td> {props.value}</td>
+      <td>%</td>
+    </tr>
+    )
+  }
   return (
-    <div>
-      <p>{props.text} {props.value}</p>
-    </div>
+    <tr>
+      <td>{props.text}</td>
+      <td> {props.value}</td>
+    </tr>
+      
   )
 }
 
@@ -60,7 +79,9 @@ const App = () => {
       <Button action={incrementNeutral} text="Neutral" />
       <Button action={incrementBad} text="Bad" />
       <h1>statistics</h1>
+      
       <Statistics good={good} neutral={neutral} bad={bad} />
+
     </div>
   )
 }
